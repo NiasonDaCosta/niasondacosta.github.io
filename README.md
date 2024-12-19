@@ -4,4 +4,4 @@
 
 Each track captures the raw emotion of navigating wealth, heartbreak, and self-destruction while embracing a vampiric edge—dripping in the mystery and decadence of a Playboi Carti or Destroy Lonely lifestyle. It’s the night before Valentine’s Day, a time when the darkness of solitude challenges the light of love. Will you let the love in, or remain lost in the shadows?  
 
-*DRAKKAR* is *bixe!*’s most personal work, a reflection of his battles with depression, the weight of his past, and the temptation to give in to despair. It’s a reminder that even in the darkest times, there’s a strange beauty, a value found in the struggle—just as Drakkar Noir is coveted not for its scent, but for its identity.  
+*DRAKKAR* is *nixe!*’s most personal work, a reflection of his battles with depression, the weight of his past, and the temptation to give in to despair. It’s a reminder that even in the darkest times, there’s a strange beauty, a value found in the struggle—just as Drakkar Noir is coveted not for its scent, but for its identity.  
