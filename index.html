@@ -8,7 +8,7 @@
         /* Link to your custom font from GitHub Pages */
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('https://NiasonDaCosta.github.io/NiasonDaCosta.github.io/art%20dystopia.otf') format('opentype');
+            src: url('https://NiasonDaCosta.github.io/drakkar/Art%20Dystopia.otf') format('opentype');
         }
 
         /* Basic CSS styling */
@@ -19,12 +19,59 @@
             color: white; /* Set text color to white */
             font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
         }
 
+        h1, h2, p {
+            margin: 0.5rem; /* Adds spacing between elements */
+        }
+
         h1 {
-            font-size: 5rem; /* Adjust size as needed */
-            letter-
+            font-size: 6rem; /* Adjust size as needed */
+            letter-spacing: 0.3rem; /* Optional spacing for style */
+            text-transform: uppercase; /* Make the title all caps */
+        }
+
+        h2 {
+            font-size: 2rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.5rem;
+            letter-spacing: 0.1rem;
+            line-height: 2; /* Add space between the lines of the tracklist */
+            white-space: pre-wrap; /* Ensure the tracklist formatting stays intact */
+        }
+
+        /* Optional: Add more space at the bottom */
+        .tracklist {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drakkar</h1>
+    <h2>February 13th, 2025</h2>
+    <div class="tracklist">
+        <p>I. TECH</p>
+        <p>II. WRAITH</p>
+        <p>III. OIL</p>
+        <p>IV. HATRED</p>
+        <p>V. POTTY LANGUAGE</p>
+        <p>VI. TE11 ME DIFF3R3NT</p>
+        <p>VII. ROCKSTXR</p>
+        <p>VIII. D3ATH UP0N M3</p>
+        <p>IX. REVENANT</p>
+        <p>X. VAMP</p>
+        <p>XI. WATCH MY SIX</p>
+        <p>XII. CONCRETE</p>
+        <p>XIII. ZENITH CESSATION</p>
+    </div>
+</body>
+</html>
