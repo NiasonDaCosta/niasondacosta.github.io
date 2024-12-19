@@ -22,31 +22,38 @@
             font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Align from top */
-            align-items: center;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
             height: 100vh;
             text-align: center;
             line-height: 1.5;
-            padding-top: 50px; /* Added padding to push content down */
+            padding-top: 50px; /* Add padding to push content down */
         }
 
         h1 {
-            font-size: 8rem; /* Large size for "DRAKKAR" */
+            font-size: 6rem; /* Large size for "DRAKKAR" */
             letter-spacing: 0.3rem; /* Optional spacing for style */
             margin: 0;
         }
 
-        .release-date {
-            font-size: 3rem; /* Slightly smaller than "DRAKKAR" */
+        .nixe {
+            font-size: 3rem; /* Smaller than DRAKKAR and the date */
             margin: 1rem 0;
+            text-transform: uppercase; /* Make it all caps */
+        }
+
+        .release-date {
+            font-size: 2.5rem; /* Slightly smaller than "DRAKKAR" */
+            margin: 1rem 0;
+            text-transform: uppercase; /* Make the date all caps */
         }
 
         .track-list {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-top: 2rem;
             text-align: left;
             line-height: 2;
-            max-width: 600px; /* Limit width for the track list */
+            max-width: 600px; /* Limit width for track list */
             margin: 0 auto;
         }
 
@@ -57,7 +64,8 @@
 </head>
 <body>
     <h1>DRAKKAR</h1>
-    <div class="release-date">February 13th, 2025</div>
+    <div class="nixe">NIXE!</div> <!-- Added NIXE! -->
+    <div class="release-date">FEBRUARY 13TH, 2025</div>
     <ul class="track-list">
         <li>I. TECH</li>
         <li>II. WRAITH</li>
