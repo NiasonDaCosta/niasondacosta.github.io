@@ -8,7 +8,7 @@
         /* Link to your custom font from GitHub Pages */
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('https://NiasonDaCosta.github.io/drakkar/art%20dystopia.otf') format('opentype');
+            src: url('https://NiasonDaCosta.github.io/NiasonDaCosta.github.io/art%20dystopia.otf') format('opentype');
         }
 
         /* Basic CSS styling */
