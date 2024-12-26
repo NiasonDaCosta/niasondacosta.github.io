@@ -27,4 +27,24 @@
 
         h1 {
             font-size: 5rem; /* Adjust size as needed */
-            letter-
+            letter-spacing: 0.1em; /* Add letter spacing for better readability */
+        }
+
+        .content { /* Create a new class for the content below the title */
+            margin-top: 2rem; /* Add some space after the title */
+        }
+
+        a { /* Style the hyperlink */
+            color: white; /* Keep text color white */
+            text-decoration: none; /* Remove underline */
+        }
+    </style>
+</head>
+<body>
+    <h1>Drakkar: XII Zenith Cessation</h1>
+    <div class="content">
+        <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1">IG POST.</a>  <br>
+        <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/5e28169d58d6694013e2d9771637859c1da017e2/drakkar.png" alt="Drakkar Image">
+    </div>
+</body>
+</html>
