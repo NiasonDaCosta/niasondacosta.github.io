@@ -36,12 +36,12 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(0);
             max-width: 80%;
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: opacity 1s ease, filter 2s ease;
+            transition: opacity 1s ease, transform 2s ease;
         }
 
         h1 {
@@ -129,32 +129,34 @@
             transition: opacity 1s ease;
         }
 
-        /* Instagram Post Resize */
+        /* Instagram Post Resize (Smaller) */
         .instagram-post {
-            max-width: 600px;
+            max-width: 500px; /* Reduced size */
             height: auto;
             margin: 20px auto;
             transition: all 0.5s ease;
         }
 
-        /* Play/Pause Button */
+        /* Play/Pause Button Styles */
         #play-pause-btn {
-            position: absolute;
-            bottom: 20px;
-            z-index: 20;
-            padding: 10px 20px;
-            font-size: 2rem;
-            background-color: #111;
-            color: white;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ff6347;
             border: none;
+            color: white;
+            font-size: 3rem;
+            padding: 15px 20px;
+            border-radius: 50%;
             cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
         }
 
         #play-pause-btn:hover {
-            background-color: #333;
+            transform: scale(1.1);
         }
+
     </style>
 </head>
 <body>
@@ -189,35 +191,21 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Instagram Post (doubled in size) -->
+        <!-- Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
             <img class="instagram-post" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
         </a>
     </div>
 
     <!-- Audio Player -->
-    <audio id="background-audio" preload="auto">
+    <audio id="background-audio" preload="auto" loop>
         <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
     </audio>
 
     <!-- Play/Pause Button -->
-    <button id="play-pause-btn">Play</button>
+    <button id="play-pause-btn" onclick="toggleAudio()">▶</button>
 
     <script>
-        // Play/Pause Button functionality
-        let audio = document.getElementById('background-audio');
-        let playPauseButton = document.getElementById('play-pause-btn');
-
-        playPauseButton.addEventListener('click', function() {
-            if (audio.paused) {
-                audio.play();
-                playPauseButton.innerText = "Pause";
-            } else {
-                audio.pause();
-                playPauseButton.innerText = "Play";
-            }
-        });
-
         // When the logo is clicked
         document.getElementById('logo').addEventListener('click', function() {
             // Apply fade-out effect to the logo
@@ -244,6 +232,34 @@
         window.onload = function() {
             var audio = document.getElementById('background-audio');
             audio.play();
+        };
+
+        // Function to toggle play/pause for audio
+        function toggleAudio() {
+            var audio = document.getElementById('background-audio');
+            var btn = document.getElementById('play-pause-btn');
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = '❚❚';  // Change to pause button
+            } else {
+                audio.pause();
+                btn.innerHTML = '▶';  // Change to play button
+            }
+        }
+
+        // Ensure audio loops indefinitely
+        document.getElementById('background-audio').addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        });
+
+        // Add the initial animations for the logo
+        window.onload = function() {
+            var logo = document.getElementById('logo');
+            setTimeout(function() {
+                logo.style.transform = "translate(-50%, -50%) scale(1)";
+                logo.style.opacity = 1;
+            }, 500); // Start the animation 0.5s after the page loads
         };
     </script>
 </body>
