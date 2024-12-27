@@ -114,9 +114,10 @@
 
         .pixelated {
             filter: blur(5px);
+            transition: filter 2s ease;
         }
 
-        .pixelated:hover {
+        .pixelated.remove-pixelate {
             filter: blur(0);
         }
 
@@ -137,7 +138,7 @@
         }
 
         .IG\ POST {
-            max-width: 500px;
+            width: 150px; /* Adjust to original size */
             height: auto;
             margin: 20px auto;
             transition: all 0.5s ease;
@@ -225,7 +226,16 @@
                 document.body.style.backgroundPosition = "center";
                 document.querySelector('.hidden-content').style.display = "block";
                 document.querySelector('.hidden-content').style.opacity = 1;
-                document.getElementById('album-cover').classList.remove('pixelated');
+
+                // Add pixelated effect to elements when they appear
+                var elementsToPixelate = document.querySelectorAll('#album-cover, h1, .nixe, .release-date');
+                elementsToPixelate.forEach(function(element) {
+                    element.classList.add('pixelated');
+                    setTimeout(function() {
+                        element.classList.add('remove-pixelate');
+                    }, 500);
+                });
+
                 var audio = document.getElementById('background-audio');
                 if (audio.paused) {
                     audio.play();
