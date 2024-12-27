@@ -29,7 +29,22 @@
             overflow-y: scroll; /* Allow vertical scrolling */
             height: 100vh; /* Ensure the body takes up the full height */
             position: relative; /* Positioning context for the noise overlay */
-            transition: background-color 0.3s ease; /* Smooth transition for background color change */
+            background-color: black; /* Set background to black initially */
+            opacity: 0; /* Make page invisible initially */
+            transition: opacity 2s ease-in-out; /* Fade in effect */
+        }
+
+        /* Style for initial image */
+        #initial-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 80%;
+            height: auto;
+            z-index: 10; /* Keep the image on top initially */
+            opacity: 1; /* Ensure it's visible initially */
+            transition: opacity 2s ease-in-out; /* Fade out effect */
         }
 
         h1 {
@@ -73,6 +88,7 @@
             margin: 20px auto;
             max-width: 90%;
             height: auto;
+            transition: filter 1s ease; /* Add transition for pixelation effect */
         }
 
         a {
@@ -84,24 +100,6 @@
             transition: transform 0.3s ease; /* Animation transition */
         }
 
-        /* Noise Animation */
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Static_white_noise.png') repeat; /* Replace with your noise texture */
-            opacity: 0.2; /* Increased opacity for better visibility */
-            animation: noise-animation 0.5s steps(10) infinite;
-        }
-
-        @keyframes noise-animation {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
-        }
-
         /* Hover animation for text */
         h1:hover, .nixe:hover, .release-date:hover, a:hover {
             transform: translateY(-10px); /* Moves the text up a little on hover */
@@ -111,18 +109,36 @@
         .track-list li:hover {
             transform: translateY(-5px); /* Moves the track list item up slightly on hover */
         }
+
+        /* Pixelation effect */
+        .pixelated {
+            filter: blur(5px); /* Apply initial blur for pixelation effect */
+        }
+
+        .pixelated:hover {
+            filter: blur(0); /* Remove blur on hover */
+        }
+
+        /* The fading effect (Thanos snap) */
+        .fade-in {
+            opacity: 1 !important;
+            transition: opacity 2s ease-in-out;
+        }
+
     </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-vibrant/3.1.6/vibrant.min.js"></script> <!-- Vibrant.js -->
 </head>
 <body>
-    <!-- Title and Subtitle -->
+    <!-- Initial Image -->
+    <img id="initial-image" src="download-vamp.png" alt="Initial Image">
+
+    <!-- Title and Subtitle (will be revealed after fade) -->
     <h1>DRAKKAR</h1>
     <div class="nixe">NIXE!</div>
     <div class="release-date">FEBRUARY 13TH, 2025</div>
 
     <!-- Clickable Album Cover -->
     <a href="https://linktr.ee/officialnixe" target="_blank">
-        <img id="album-cover" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+        <img id="album-cover" class="pixelated" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
     </a>
 
     <!-- Track List -->
@@ -148,18 +164,32 @@
     <!-- Download PNG -->
     <img src="download-vamp.png" alt="Download Vamp Image">
 
-    <!-- Noise Overlay -->
-    <div class="noise-overlay"></div>
+    <!-- Audio Player -->
+    <audio id="background-audio" autoplay loop>
+        <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/1e1654cecbd223731a71fd7cdcca3a3f2c53ec6d/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.wav?raw=true" type="audio/wav">
+    </audio>
 
     <script>
-        // Function to extract the dominant color from the album cover image
         window.onload = function() {
-            const imageElement = document.getElementById('album-cover');
-            const vibrant = new Vibrant(imageElement);
-            vibrant.getPalette().then((palette) => {
-                const dominantColor = palette.Vibrant.hex; // Get the vibrant color
-                document.body.style.backgroundColor = dominantColor; // Set it as the background color
-            });
+            const audio = document.getElementById('background-audio');
+            const body = document.body;
+            const initialImage = document.getElementById('initial-image');
+
+            // Start audio as soon as the page loads
+            audio.play();
+
+            // Fade effect for the page (Thanos snap)
+            body.style.opacity = 1;
+
+            // Fade out the initial image
+            setTimeout(function() {
+                initialImage.style.opacity = 0;
+            }, 2000); // Set timeout to remove initial image after 2 seconds
+
+            // Add fade-in effect for content
+            setTimeout(function() {
+                body.classList.add('fade-in');
+            }, 3000); // Wait for 3 seconds to add fade-in class
         };
     </script>
 </body>
