@@ -194,7 +194,7 @@
 
         <!-- Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG POST">
         </a>
     </div>
 
@@ -208,34 +208,39 @@
 
     <script>
         // When the logo is clicked
-        document.getElementById('logo').addEventListener('click', function() {
-            // Apply fade-out effect to the logo
-            this.classList.add('fade-out');
+document.getElementById('logo').addEventListener('click', function() {
+    var logo = this;
+    
+    // Apply fade-out effect to the logo
+    logo.classList.add('fade-out');
 
-            // Wait for the fade-out to complete before making other changes
-            setTimeout(function() {
-                // Change the background to the drakkar background
-                document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
-                document.body.style.backgroundSize = "cover";
-                document.body.style.backgroundPosition = "center";
-                document.body.classList.add('background-transition');
+    // Wait for the fade-out to complete before making other changes
+    setTimeout(function() {
+        // Ensure the logo is completely faded out (after 1 second or the transition duration)
+        logo.style.display = "none"; // Hide the logo once fade-out is done
 
-                // Show the rest of the content after the logo fades out
-                document.querySelector('.hidden-content').style.display = "block";
-                document.querySelector('.hidden-content').style.opacity = 1;
+        // Change the background to the drakkar background
+        document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+        document.body.classList.add('background-transition');
 
-                // Apply pixelation effect to the album cover
-                document.getElementById('album-cover').classList.remove('pixelated');
+        // Show the rest of the content after the logo fades out
+        document.querySelector('.hidden-content').style.display = "block";
+        document.querySelector('.hidden-content').style.opacity = 1;
 
-                // Start audio play if paused
-                var audio = document.getElementById('background-audio');
-                if (audio.paused) {
-                    audio.play();
-                    document.getElementById('play-pause-btn').innerHTML = '❚❚';  // Change to pause button
-                }
-            }, 1000); // Time to wait for fade-out to finish
-        });
+        // Apply pixelation effect to the album cover
+        document.getElementById('album-cover').classList.remove('pixelated');
 
+        // Start audio play if paused
+        var audio = document.getElementById('background-audio');
+        if (audio.paused) {
+            audio.play();
+            document.getElementById('play-pause-btn').innerHTML = '❚❚';  // Change to pause button
+        }
+    }, 1000); // Time to wait for fade-out to finish (adjust as needed for your fade-out duration)
+});
+        
         // Start playing the audio automatically when the page loads
         window.onload = function() {
             var audio = document.getElementById('background-audio');
