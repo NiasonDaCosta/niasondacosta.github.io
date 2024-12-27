@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vampstarz Page</title>
+    <title>Drakkar</title>
     <style>
         @font-face {
             font-family: 'Art Dystopia';
@@ -30,35 +30,34 @@
             background-color: white;
             opacity: 1;
             transition: background-color 1s ease;
-            font-size: 16px;
+            font-size: 16px; /* Base font size */
         }
 
         #logo {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0); /* Start at 0 scale */
             max-width: 80%;
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: transform 1s ease;
+            transition: transform 1s ease; /* Transition for scaling */
         }
 
         #logo.loaded {
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); /* Full size when loaded */
         }
 
-        h1, .nixe, .release-date {
-            font-size: 3rem;
-            letter-spacing: 0.3rem;
-            margin: 0;
-            transition: opacity 1s ease-out, transform 1s ease-out;
-            opacity: 0;
+        h1, .nixe, .release-date, .track-list li {
+            transition: transform 0.3s ease;
+            transform: translateY(0);
         }
 
         h1 {
             font-size: 3rem;
+            letter-spacing: 0.3rem;
+            margin: 0;
         }
 
         .nixe {
@@ -80,14 +79,12 @@
             line-height: 2;
             max-width: 600px;
             margin: 0 auto;
-            transition: transform 0.3s ease;
             list-style-type: none;
             padding: 0;
         }
 
         .track-list li {
             margin: 0.5rem 0;
-            transition: transform 0.3s ease;
         }
 
         img {
@@ -141,7 +138,7 @@
         }
 
         .IG\ POST {
-            width: 65%;
+            width: 150px; /* Adjust to 65% of original size */
             height: auto;
             margin: 20px auto;
             transition: all 0.5s ease;
@@ -166,74 +163,98 @@
         #play-pause-btn:hover {
             transform: scale(1.1);
         }
-
-        /* Pixelate effect for image and text */
-        .pixelated {
-            filter: blur(5px);
-        }
-
-        /* Instagram logo: 65% size */
-        .IG\ POST {
-            width: 65%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
+    <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
 
-    <div id="logo">
-        <img id="vampstarz-logo" src="VAMPSTARZ-logo.png" alt="VAMPSTARZ logo">
+    <div class="hidden-content">
+        <h1>DRAKKAR</h1>
+        <div class="nixe">NIXE!</div>
+        <div class="release-date">FEBRUARY 13TH, 2025</div>
+
+        <a href="https://linktr.ee/officialnixe" target="_blank">
+            <img id="album-cover" class="pixelated" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+        </a>
+
+        <ul class="track-list">
+            <li>I. TECH</li>
+            <li>II. WRAITH</li>
+            <li>III. OIL</li>
+            <li>IV. HATRED</li>
+            <li>V. POTTY LANGUAGE</li>
+            <li>VI. TE11 ME DIFF3R3NT</li>
+            <li>VII. ROCKSTXR</li>
+            <li>VIII. D3ATH UP0N M3</li>
+            <li>IX. REVENANT</li>
+            <li>X. VAMP</li>
+            <li>XI. WATCH MY SIX</li>
+            <li>XII. CONCRETE</li>
+            <li>XIII. ZENITH CESSATION</li>
+        </ul>
+
+        <!-- Instagram Logo Resized -->
+        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Download Instagram PNG">
+        </a>
     </div>
 
-    <h1>DRAKKAR</h1>
-    <div class="nixe">NIXE!</div>
-    <div class="release-date">FEBRUARY 13TH, 2025</div>
+    <audio id="background-audio" preload="auto" loop>
+        <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
+    </audio>
 
-    <ul class="track-list">
-        <li>Track 1</li>
-        <li>Track 2</li>
-        <li>Track 3</li>
-    </ul>
-
-    <a class="IG POST" href="https://www.instagram.com/niasondacosta/" target="_blank">
-        <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Instagram logo">
-    </a>
-
-    <button id="play-pause-btn">Play</button>
+    <button id="play-pause-btn" onclick="toggleAudio()">▶</button>
 
     <script>
-        window.addEventListener('load', function () {
-            // Pixelation effect
-            setTimeout(function () {
-                document.querySelector('body').classList.add('pixelated');
-                setTimeout(function () {
-                    document.querySelector('body').classList.add('remove-pixelate');
-                }, 2000);
-            }, 0);
-
-            // Small-to-big effect on logo
-            let logo = document.getElementById('vampstarz-logo');
-            logo.classList.add('loaded');
-
-            // Fade out effect on Instagram logo click
-            document.querySelector('.IG\\ POST').addEventListener('click', function () {
-                this.classList.add('fade-out');
-            });
-
-            // Smooth fade-in for text elements
-            setTimeout(function () {
-                document.querySelector('h1').style.opacity = 1;
-                document.querySelector('.nixe').style.opacity = 1;
-                document.querySelector('.release-date').style.opacity = 1;
-                document.querySelector('.track-list').style.opacity = 1;
-            }, 500);
-
-            // Transition for the floating effect (smooth)
-            document.querySelector('h1').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
-            document.querySelector('.nixe').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
-            document.querySelector('.release-date').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
+        // Wait for the page to load and apply the scale animation to the logo
+        window.addEventListener('load', function() {
+            document.getElementById('logo').classList.add('loaded');
         });
-    </script>
 
+        document.getElementById('logo').addEventListener('transitionend', function() {
+            // Reset the scale after the scaling animation ends
+            this.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+
+        document.getElementById('logo').addEventListener('click', function() {
+            var logo = this;
+            logo.classList.add('fade-out');
+            setTimeout(function() {
+                logo.style.display = "none"; // Ensure the logo is hidden after click
+                document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
+                document.body.style.backgroundSize = "cover";
+                document.body.style.backgroundPosition = "center";
+                document.querySelector('.hidden-content').style.display = "block";
+                document.querySelector('.hidden-content').style.opacity = 1;
+
+                // Add pixelated effect to elements when they appear
+                var elementsToPixelate = document.querySelectorAll('#album-cover, h1, .nixe, .release-date');
+                elementsToPixelate.forEach(function(element) {
+                    element.classList.add('pixelated');
+                    setTimeout(function() {
+                        element.classList.add('remove-pixelate');
+                    }, 500);
+                });
+
+                var audio = document.getElementById('background-audio');
+                if (audio.paused) {
+                    audio.play();
+                    document.getElementById('play-pause-btn').innerHTML = '❚❚';
+                }
+            }, 1000);
+        });
+
+        function toggleAudio() {
+            var audio = document.getElementById('background-audio');
+            var btn = document.getElementById('play-pause-btn');
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = '❚❚';
+            } else {
+                audio.pause();
+                btn.innerHTML = '▶';
+            }
+        }
+    </script>
 </body>
 </html>
