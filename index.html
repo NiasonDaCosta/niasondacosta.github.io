@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drakkar</title>
     <style>
-        /* Your existing styles remain unchanged */
         @font-face {
             font-family: 'Art Dystopia';
             src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
@@ -31,7 +30,7 @@
             background-color: white;
             opacity: 1;
             transition: background-color 1s ease;
-            font-size: 16px;
+            font-size: 16px; /* Base font size */
         }
 
         #logo {
@@ -46,8 +45,50 @@
             transition: opacity 1s ease, transform 2s ease;
         }
 
-        h1, .nixe, .release-date, a, .track-list li {
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 0.3rem;
+            margin: 0;
             transition: transform 0.3s ease;
+        }
+
+        .nixe {
+            font-size: 2rem;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .release-date {
+            font-size: 1.75rem;
+            margin: 1rem 0;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+
+        .track-list {
+            font-size: 1.25rem;
+            margin-top: 5rem;
+            text-align: left;
+            line-height: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .track-list li {
+            margin: 0.5rem 0;
+            transition: transform 0.3s ease;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
+            transition: filter 1s ease;
         }
 
         a {
@@ -56,25 +97,66 @@
             font-size: 3rem;
             margin-top: 40px;
             display: block;
+            transition: transform 0.3s ease;
         }
 
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 90%;
-            height: auto;
+        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+            transform: translateY(-10px);
         }
 
-        .IG\ POST {
-            max-width: 500px;
-            height: auto;
-            margin: 20px auto;
+        .track-list li:hover {
+            transform: translateY(-5px);
+        }
+
+        .pixelated {
+            filter: blur(5px);
+        }
+
+        .pixelated:hover {
+            filter: blur(0);
         }
 
         .hidden-content {
             display: none;
             opacity: 0;
             transition: opacity 2s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .background-transition {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        .IG\ POST {
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
+            transition: all 0.5s ease;
+            text-decoration: underline;
+        }
+
+        #play-pause-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 3rem;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #play-pause-btn:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -87,7 +169,7 @@
         <div class="release-date">FEBRUARY 13TH, 2025</div>
 
         <a href="https://linktr.ee/officialnixe" target="_blank">
-            <img id="album-cover" class="pixelated" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+            <img id="album-cover" class="pixelated" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
         </a>
 
         <ul class="track-list">
@@ -106,7 +188,6 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Corrected Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
             <img class="IG\ POST" src="https://via.placeholder.com/500x500.png?text=Instagram+Post+Placeholder" alt="IG POST">
         </a>
