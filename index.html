@@ -53,18 +53,21 @@
             font-size: 3rem;
             letter-spacing: 0.3rem;
             margin: 0;
+            transition: transform 0.3s ease;
         }
 
         .nixe {
             font-size: 2rem;
             margin: 1rem 0;
             text-transform: uppercase;
+            transition: transform 0.3s ease;
         }
 
         .release-date {
             font-size: 1.75rem;
             margin: 1rem 0;
             text-transform: uppercase;
+            transition: transform 0.3s ease;
         }
 
         .track-list {
@@ -74,12 +77,14 @@
             line-height: 2;
             max-width: 600px;
             margin: 0 auto;
+            transition: transform 0.3s ease;
             list-style-type: none;
             padding: 0;
         }
 
         .track-list li {
             margin: 0.5rem 0;
+            transition: transform 0.3s ease;
         }
 
         img {
@@ -96,6 +101,11 @@
             font-size: 3rem;
             margin-top: 40px;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+            transform: translateY(-10px);
         }
 
         .track-list li:hover {
@@ -117,16 +127,22 @@
             transition: opacity 2s ease;
         }
 
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
         .background-transition {
             opacity: 1;
             transition: opacity 1s ease;
         }
 
         .IG\ POST {
-            width: 50%; /* Adjusted to 50% for smaller size */
+            width: 65%; /* Adjusted to 65% of original size */
             height: auto;
             margin: 20px auto;
             transition: all 0.5s ease;
+            text-decoration: underline;
         }
 
         #play-pause-btn {
@@ -158,7 +174,7 @@
         <div class="release-date">FEBRUARY 13TH, 2025</div>
 
         <a href="https://linktr.ee/officialnixe" target="_blank">
-            <img id="album-cover" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+            <img id="album-cover" class="pixelated" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
         </a>
 
         <ul class="track-list">
@@ -177,9 +193,9 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Replaced with the new Instagram logo PNG -->
-        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png">
+        <!-- Instagram Logo -->
+        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/c0cf1054ab71b448724160dc347164b5bd568c5d/Black-Instagram-Logo-No-Background.png" target="_blank">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/c0cf1054ab71b448724160dc347164b5bd568c5d/Black-Instagram-Logo-No-Background.png">
         </a>
     </div>
 
