@@ -53,20 +53,24 @@
             font-size: 3rem;
             letter-spacing: 0.3rem;
             margin: 0;
-            transition: transform 0.3s ease;
             display: inline-block;
         }
 
-        .nixe {
-            font-size: 2rem;
+        .nixe, .release-date {
             margin: 1rem 0;
             text-transform: uppercase;
+            position: relative;
         }
 
-        .release-date {
-            font-size: 1.75rem;
-            margin: 1rem 0;
-            text-transform: uppercase;
+        .nixe::after, .release-date::after {
+            content: '';
+            display: block;
+            height: 3px;
+            background-color: white;
+            width: 100%;
+            position: absolute;
+            bottom: -10px; /* Position the line beneath the text */
+            left: 0;
         }
 
         .track-list {
@@ -76,7 +80,6 @@
             line-height: 2;
             max-width: 600px;
             margin: 0 auto;
-            transition: transform 0.3s ease;
             list-style-type: none;
             padding: 0;
         }
@@ -91,7 +94,6 @@
             margin: 20px auto;
             max-width: 90%;
             height: auto;
-            transition: filter 1s ease;
         }
 
         a {
@@ -100,48 +102,17 @@
             font-size: 3rem;
             margin-top: 40px;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        h1:hover, .nixe:hover, .release-date:hover, a:hover, .track-list li:hover {
-            transform: translateY(-10px);
         }
 
         .track-list li:hover {
             transform: translateY(-5px);
         }
 
-        .pixelated {
-            filter: blur(5px);
-            transition: filter 2s ease;
-        }
-
-        .pixelated.remove-pixelate {
-            filter: blur(0);
-        }
-
-        .hidden-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
-
-        .fade-out {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .background-transition {
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
-
+        /* Instagram Logo - smaller size */
         .IG\ POST {
-            width: 65%; /* Reduced to 65% of original size */
+            width: 50%; /* Reduced to 50% of original size */
             height: auto;
             margin: 20px auto;
-            transition: all 0.5s ease;
-            text-decoration: underline;
         }
 
         #play-pause-btn {
@@ -163,9 +134,9 @@
             transform: scale(1.1);
         }
 
-        /* Hover effect on album cover with darkening */
-        #album-cover:hover {
-            filter: brightness(70%);
+        /* No hover effect on album cover */
+        #album-cover {
+            filter: none;
         }
 
     </style>
@@ -179,7 +150,7 @@
         <div class="release-date">FEBRUARY 13TH, 2025</div>
 
         <a href="https://linktr.ee/officialnixe" target="_blank">
-            <img id="album-cover" class="pixelated" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+            <img id="album-cover" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
         </a>
 
         <ul class="track-list">
@@ -199,8 +170,8 @@
         </ul>
 
         <!-- Instagram Logo -->
-        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Instagram Logo">
+        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/44b6bc51bee862ffb162004e117a60e195c4fc06/Black-Instagram-Logo-No-Background.png" target="_blank">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/44b6bc51bee862ffb162004e117a60e195c4fc06/Black-Instagram-Logo-No-Background.png" alt="Instagram Logo">
         </a>
     </div>
 
