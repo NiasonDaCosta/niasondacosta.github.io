@@ -5,81 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drakkar</title>
     <style>
-        /* Link to your custom font from GitHub Pages */
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
+            src: url('Art Dystopia.otf') format('opentype');
         }
 
-        /* Basic CSS styling */
         body {
             margin: 0;
             padding: 0;
-            background-color: black; /* Set background to black */
-            color: white; /* Set text color to white */
-            font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
+            background-color: black;
+            color: white;
+            font-family: 'Art Dystopia', sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
-            align-items: center; /* Center content horizontally */
-            height: 100vh;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            line-height: 1.5;
-            padding-top: 50px; /* Add padding to push content down */
+        }
+
+        h1, h2 {
+            margin: 0.5em 0;
         }
 
         h1 {
-            font-size: 6rem; /* Large size for "DRAKKAR" */
-            letter-spacing: 0.3rem; /* Optional spacing for style */
-            margin: 0;
+            font-size: 5rem;
+            letter-spacing: 0.1em;
         }
 
-        .nixe {
-            font-size: 3rem; /* Smaller than DRAKKAR and the date */
-            margin: 1rem 0;
-            text-transform: uppercase; /* Make it all caps */
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1em;
         }
 
-        .release-date {
-            font-size: 2.5rem; /* Slightly smaller than "DRAKKAR" */
-            margin: 1rem 0;
-            text-transform: uppercase; /* Make the date all caps */
+        a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.2rem;
+            margin-top: 1em;
         }
 
-        .track-list {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            text-align: left;
-            line-height: 2;
-            max-width: 600px; /* Limit width for track list */
-            margin: 0 auto;
-        }
-
-        .track-list li {
-            margin: 0.5rem 0;
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <h1>DRAKKAR</h1>
-    <div class="nixe">NIXE!</div> <!-- Added NIXE! -->
-    <div class="release-date">FEBRUARY 13TH, 2025</div>
-    <ul class="track-list">
-        <li>I. TECH</li>
-        <li>II. WRAITH</li>
-        <li>III. OIL</li>
-        <li>IV. HATRED</li>
-        <li>V. POTTY LANGUAGE</li>
-        <li>VI. TE11 ME DIFF3R3NT</li>
-        <li>VII. ROCKSTXR</li>
-        <li>VIII. D3ATH UP0N M3</li>
-        <li>IX. REVENANT</li>
-        <li>X. VAMP</li>
-        <li>XI. WATCH MY SIX</li>
-        <li>XII. CONCRETE</li>
-        <li>XIII. ZENITH CESSATION</li>
-    </ul>
+    <h1>Nixe!</h1>
+    <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+    <h2>Drakkar: XII Zenith Cessation</h2>
+
+    <!-- Instagram Link -->
+    <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
+
+    <!-- Download Vamp Image -->
+    <img src="download-vamp.png" alt="Download Vamp Image">
 </body>
 </html>
