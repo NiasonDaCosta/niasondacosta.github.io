@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('Art Dystopia.otf') format('opentype');
+            src: url('https://NiasonDaCosta.github.io/NiasonDaCosta.github.io/art%20dystopia.otf') format('opentype');
         }
 
         body {
@@ -18,30 +19,31 @@
             font-family: 'Art Dystopia', sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
         }
 
-        h1, h2 {
-            margin: 0.5em 0;
-        }
-
         h1 {
             font-size: 5rem;
-            letter-spacing: 0.1em;
+            margin: 20px 0;
         }
 
         h2 {
             font-size: 3rem;
-            margin-bottom: 1em;
+            margin: 10px 0 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 20px 0;
         }
 
         a {
             color: white;
             text-decoration: underline;
             font-size: 1.2rem;
-            margin-top: 1em;
+            margin: 20px 0;
         }
 
         img {
@@ -50,17 +52,40 @@
             max-width: 90%;
             height: auto;
         }
+
+        .tracklist {
+            margin: 20px 0;
+            text-align: left;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
+
 <body>
+    <!-- Title and Subtitle -->
     <h1>Nixe!</h1>
-    <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
     <h2>Drakkar: XII Zenith Cessation</h2>
+
+    <!-- Drakkar Album Cover -->
+    <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+
+    <!-- Track List -->
+    <div class="tracklist">
+        <h3>Track List:</h3>
+        <p>
+            1. Intro: The Beginning<br>
+            2. Zenith<br>
+            3. Cessation<br>
+            4. Eternal Voyage<br>
+            5. Last Breath<br>
+        </p>
+    </div>
 
     <!-- Instagram Link -->
     <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
 
-    <!-- Download Vamp Image -->
+    <!-- Download PNG -->
     <img src="download-vamp.png" alt="Download Vamp Image">
 </body>
+
 </html>
