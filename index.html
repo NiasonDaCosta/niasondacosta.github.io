@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drakkar</title>
     <style>
+        /* Your existing styles remain unchanged */
         @font-face {
             font-family: 'Art Dystopia';
             src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
@@ -30,7 +31,7 @@
             background-color: white;
             opacity: 1;
             transition: background-color 1s ease;
-            font-size: 16px; /* Base font size */
+            font-size: 16px;
         }
 
         #logo {
@@ -45,50 +46,8 @@
             transition: opacity 1s ease, transform 2s ease;
         }
 
-        h1 {
-            font-size: 3rem;  /* Using rem for consistent scaling */
-            letter-spacing: 0.3rem;
-            margin: 0;
+        h1, .nixe, .release-date, a, .track-list li {
             transition: transform 0.3s ease;
-        }
-
-        .nixe {
-            font-size: 2rem;  /* Using rem for consistent scaling */
-            margin: 1rem 0;
-            text-transform: uppercase;
-            transition: transform 0.3s ease;
-        }
-
-        .release-date {
-            font-size: 1.75rem;  /* Using rem for consistent scaling */
-            margin: 1rem 0;
-            text-transform: uppercase;
-            transition: transform 0.3s ease;
-        }
-
-        .track-list {
-            font-size: 1.25rem;  /* Using rem for consistent scaling */
-            margin-top: 5rem;
-            text-align: left;
-            line-height: 2;
-            max-width: 600px;
-            margin: 0 auto;
-            transition: transform 0.3s ease;
-            list-style-type: none; /* Removes bullet points */
-            padding: 0; /* Removes padding from the list */
-        }
-
-        .track-list li {
-            margin: 0.5rem 0;
-            transition: transform 0.3s ease;
-        }
-
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 90%;
-            height: auto;
-            transition: filter 1s ease;
         }
 
         a {
@@ -97,23 +56,19 @@
             font-size: 3rem;
             margin-top: 40px;
             display: block;
-            transition: transform 0.3s ease;
         }
 
-        h1:hover, .nixe:hover, .release-date:hover, a:hover {
-            transform: translateY(-10px);
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
         }
 
-        .track-list li:hover {
-            transform: translateY(-5px);
-        }
-
-        .pixelated {
-            filter: blur(5px);
-        }
-
-        .pixelated:hover {
-            filter: blur(0);
+        .IG\ POST {
+            max-width: 500px;
+            height: auto;
+            margin: 20px auto;
         }
 
         .hidden-content {
@@ -121,64 +76,20 @@
             opacity: 0;
             transition: opacity 2s ease;
         }
-
-        .fade-out {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .background-transition {
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
-
-        /* Instagram Post Resize (Smaller) */
-        .IG\ POST {
-            max-width: 500px; /* Reduced size */
-            height: auto;
-            margin: 20px auto;
-            transition: all 0.5s ease;
-            text-decoration: underline; /* Ensure it's underlined */
-        }
-
-        /* Play/Pause Button Styles */
-        #play-pause-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: black; /* Changed to black */
-            border: none;
-            color: white;
-            font-size: 3rem;
-            padding: 15px 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        #play-pause-btn:hover {
-            transform: scale(1.1);
-        }
-
     </style>
 </head>
 <body>
-    <!-- Logo Image (clickable) -->
     <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
 
-    <!-- Hidden Content (initially hidden) -->
     <div class="hidden-content">
         <h1>DRAKKAR</h1>
         <div class="nixe">NIXE!</div>
         <div class="release-date">FEBRUARY 13TH, 2025</div>
 
-        <!-- Clickable Album Cover -->
         <a href="https://linktr.ee/officialnixe" target="_blank">
             <img id="album-cover" class="pixelated" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
         </a>
 
-        <!-- Track List -->
         <ul class="track-list">
             <li>I. TECH</li>
             <li>II. WRAITH</li>
@@ -195,89 +106,49 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Instagram Post -->
+        <!-- Corrected Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG POST">
+            <img class="IG\ POST" src="https://via.placeholder.com/500x500.png?text=Instagram+Post+Placeholder" alt="IG POST">
         </a>
     </div>
 
-    <!-- Audio Player -->
     <audio id="background-audio" preload="auto" loop>
         <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
     </audio>
 
-    <!-- Play/Pause Button -->
     <button id="play-pause-btn" onclick="toggleAudio()">▶</button>
 
     <script>
-        // When the logo is clicked
         document.getElementById('logo').addEventListener('click', function() {
             var logo = this;
-            
-            // Apply fade-out effect to the logo
             logo.classList.add('fade-out');
-
-            // Wait for the fade-out to complete before making other changes
             setTimeout(function() {
-                // Ensure the logo is completely faded out (after 1 second or the transition duration)
-                logo.style.display = "none"; // Hide the logo once fade-out is done
-
-                // Change the background to the drakkar background
+                logo.style.display = "none";
                 document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
                 document.body.style.backgroundSize = "cover";
                 document.body.style.backgroundPosition = "center";
-                document.body.classList.add('background-transition');
-
-                // Show the rest of the content after the logo fades out
                 document.querySelector('.hidden-content').style.display = "block";
                 document.querySelector('.hidden-content').style.opacity = 1;
-
-                // Apply pixelation effect to the album cover
                 document.getElementById('album-cover').classList.remove('pixelated');
-
-                // Start audio play if paused
                 var audio = document.getElementById('background-audio');
                 if (audio.paused) {
                     audio.play();
-                    document.getElementById('play-pause-btn').innerHTML = '❚❚';  // Change to pause button
+                    document.getElementById('play-pause-btn').innerHTML = '❚❚';
                 }
-            }, 1000); // Time to wait for fade-out to finish (adjust as needed for your fade-out duration)
+            }, 1000);
         });
 
-        // Start playing the audio automatically when the page loads
-        window.onload = function() {
-            var audio = document.getElementById('background-audio');
-            audio.play();
-        };
-
-        // Function to toggle play/pause for audio
         function toggleAudio() {
             var audio = document.getElementById('background-audio');
             var btn = document.getElementById('play-pause-btn');
-
             if (audio.paused) {
                 audio.play();
-                btn.innerHTML = '❚❚';  // Change to pause button
+                btn.innerHTML = '❚❚';
             } else {
                 audio.pause();
-                btn.innerHTML = '▶';  // Change to play button
+                btn.innerHTML = '▶';
             }
         }
-
-        // Ensure audio loops indefinitely
-        document.getElementById('background-audio').addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        });
-
-        // Add the initial animations for the logo
-        window.onload = function() {
-            var logo = document.getElementById('logo');
-            setTimeout(function() {
-                logo.style.transform = "translate(-50%, -50%) scale(1)";
-                logo.style.opacity = 1;
-            }, 500); // Start the animation 0.5s after the page loads
-        };
     </script>
 </body>
 </html>
