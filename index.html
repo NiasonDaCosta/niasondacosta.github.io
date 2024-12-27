@@ -1,260 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drakkar</title>
-    <style>
-        @font-face {
-            font-family: 'Art Dystopia';
-            src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+<style>
+    @font-face {
+        font-family: 'Art Dystopia';
+        src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 
-        body {
-            margin: 0;
-            padding: 0;
-            color: white;
-            font-family: 'Art Dystopia', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-            line-height: 1.5;
-            padding: 40px 20px;
-            overflow-y: scroll;
-            height: 100vh;
-            position: relative;
-            background-color: white;
-            opacity: 1;
-            transition: background-color 1s ease;
-            font-size: 16px; /* Base font size */
-        }
+    body {
+        margin: 0;
+        padding: 0;
+        color: white;
+        font-family: 'Art Dystopia', sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        line-height: 1.5;
+        padding: 40px 20px;
+        overflow-y: scroll;
+        height: 100vh;
+        position: relative;
+        background-color: white;
+        opacity: 1;
+        transition: background-color 1s ease;
+        font-size: 16px;
+    }
 
-        #logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0); /* Start at 0 scale */
-            max-width: 80%;
-            height: auto;
-            cursor: pointer;
-            z-index: 10;
-            transition: transform 1s ease; /* Transition for scaling */
-        }
+    #logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        max-width: 80%;
+        height: auto;
+        cursor: pointer;
+        z-index: 10;
+        transition: transform 1s ease;
+    }
 
-        #logo.loaded {
-            transform: translate(-50%, -50%) scale(1); /* Full size when loaded */
-        }
+    #logo.loaded {
+        transform: translate(-50%, -50%) scale(1);
+    }
 
-        h1 {
-            font-size: 3rem;
-            letter-spacing: 0.3rem;
-            margin: 0;
-            transition: transform 0.3s ease;
-        }
+    h1, .nixe, .release-date {
+        font-size: 3rem;
+        letter-spacing: 0.3rem;
+        margin: 0;
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
 
-        .nixe {
-            font-size: 2rem;
-            margin: 1rem 0;
-            text-transform: uppercase;
-            transition: transform 0.3s ease;
-        }
+    h1 {
+        font-size: 3rem;
+    }
 
-        .release-date {
-            font-size: 1.75rem;
-            margin: 1rem 0;
-            text-transform: uppercase;
-            transition: transform 0.3s ease;
-        }
+    .nixe {
+        font-size: 2rem;
+        margin: 1rem 0;
+        text-transform: uppercase;
+    }
 
-        .track-list {
-            font-size: 1.25rem;
-            margin-top: 5rem;
-            text-align: left;
-            line-height: 2;
-            max-width: 600px;
-            margin: 0 auto;
-            transition: transform 0.3s ease;
-            list-style-type: none;
-            padding: 0;
-        }
+    .release-date {
+        font-size: 1.75rem;
+        margin: 1rem 0;
+        text-transform: uppercase;
+    }
 
-        .track-list li {
-            margin: 0.5rem 0;
-            transition: transform 0.3s ease;
-        }
+    .track-list {
+        font-size: 1.25rem;
+        margin-top: 5rem;
+        text-align: left;
+        line-height: 2;
+        max-width: 600px;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+        list-style-type: none;
+        padding: 0;
+    }
 
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 90%;
-            height: auto;
-            transition: filter 1s ease;
-        }
+    .track-list li {
+        margin: 0.5rem 0;
+        transition: transform 0.3s ease;
+    }
 
-        a {
-            color: white;
-            text-decoration: underline;
-            font-size: 3rem;
-            margin-top: 40px;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+    img {
+        display: block;
+        margin: 20px auto;
+        max-width: 90%;
+        height: auto;
+        transition: filter 1s ease;
+    }
 
-        h1:hover, .nixe:hover, .release-date:hover, a:hover {
-            transform: translateY(-10px);
-        }
+    a {
+        color: white;
+        text-decoration: underline;
+        font-size: 3rem;
+        margin-top: 40px;
+        display: block;
+        transition: transform 0.3s ease;
+    }
 
-        .track-list li:hover {
-            transform: translateY(-5px);
-        }
+    h1:hover, .nixe:hover, .release-date:hover, a:hover {
+        transform: translateY(-10px);
+    }
 
-        .pixelated {
-            filter: blur(5px);
-            transition: filter 2s ease;
-        }
+    .track-list li:hover {
+        transform: translateY(-5px);
+    }
 
-        .pixelated.remove-pixelate {
-            filter: blur(0);
-        }
+    .pixelated {
+        filter: blur(5px);
+        transition: filter 2s ease;
+    }
 
-        .hidden-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
+    .pixelated.remove-pixelate {
+        filter: blur(0);
+    }
 
-        .fade-out {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+    .hidden-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
 
-        .background-transition {
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
+    .fade-out {
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
 
-        .IG\ POST {
-            width: 150px; /* Adjust to original size */
-            height: auto;
-            margin: 20px auto;
-            transition: all 0.5s ease;
-            text-decoration: underline;
-        }
+    .background-transition {
+        opacity: 1;
+        transition: opacity 1s ease;
+    }
 
-        #play-pause-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: black;
-            border: none;
-            color: white;
-            font-size: 3rem;
-            padding: 15px 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
+    .IG\ POST {
+        width: 65%;
+        height: auto;
+        margin: 20px auto;
+        transition: all 0.5s ease;
+        text-decoration: underline;
+    }
 
-        #play-pause-btn:hover {
-            transform: scale(1.1);
-        }
-    </style>
-</head>
-<body>
-    <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
+    #play-pause-btn {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: black;
+        border: none;
+        color: white;
+        font-size: 3rem;
+        padding: 15px 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
 
-    <div class="hidden-content">
-        <h1>DRAKKAR</h1>
-        <div class="nixe">NIXE!</div>
-        <div class="release-date">FEBRUARY 13TH, 2025</div>
-
-        <a href="https://linktr.ee/officialnixe" target="_blank">
-            <img id="album-cover" class="pixelated" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
-        </a>
-
-        <ul class="track-list">
-            <li>I. TECH</li>
-            <li>II. WRAITH</li>
-            <li>III. OIL</li>
-            <li>IV. HATRED</li>
-            <li>V. POTTY LANGUAGE</li>
-            <li>VI. TE11 ME DIFF3R3NT</li>
-            <li>VII. ROCKSTXR</li>
-            <li>VIII. D3ATH UP0N M3</li>
-            <li>IX. REVENANT</li>
-            <li>X. VAMP</li>
-            <li>XI. WATCH MY SIX</li>
-            <li>XII. CONCRETE</li>
-            <li>XIII. ZENITH CESSATION</li>
-        </ul>
-
-        <!-- Replaced with the new Instagram logo PNG -->
-        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Download Instagram PNG">
-        </a>
-    </div>
-
-    <audio id="background-audio" preload="auto" loop>
-        <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
-    </audio>
-
-    <button id="play-pause-btn" onclick="toggleAudio()">▶</button>
-
-    <script>
-        // Wait for the page to load and apply the scale animation to the logo
-        window.addEventListener('load', function() {
-            document.getElementById('logo').classList.add('loaded');
-        });
-
-        document.getElementById('logo').addEventListener('transitionend', function() {
-            // Reset the scale after the scaling animation ends
-            this.style.transform = 'translate(-50%, -50%) scale(1)';
-        });
-
-        document.getElementById('logo').addEventListener('click', function() {
-            var logo = this;
-            logo.classList.add('fade-out');
-            setTimeout(function() {
-                logo.style.display = "none"; // Ensure the logo is hidden after click
-                document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
-                document.body.style.backgroundSize = "cover";
-                document.body.style.backgroundPosition = "center";
-                document.querySelector('.hidden-content').style.display = "block";
-                document.querySelector('.hidden-content').style.opacity = 1;
-
-                // Add pixelated effect to elements when they appear
-                var elementsToPixelate = document.querySelectorAll('#album-cover, h1, .nixe, .release-date');
-                elementsToPixelate.forEach(function(element) {
-                    element.classList.add('pixelated');
-                    setTimeout(function() {
-                        element.classList.add('remove-pixelate');
-                    }, 500);
-                });
-
-                var audio = document.getElementById('background-audio');
-                if (audio.paused) {
-                    audio.play();
-                    document.getElementById('play-pause-btn').innerHTML = '❚❚';
-                }
-            }, 1000);
-        });
-
-        function toggleAudio() {
-            var audio = document.getElementById('background-audio');
-            var btn = document.getElementById('play-pause-btn');
-            if (audio.paused) {
-                audio.play();
-                btn.innerHTML = '❚❚';
-            } else {
-                audio.pause();
-                btn.innerHTML = '▶';
-            }
-        }
-    </script>
-</body>
-</html>
+    #play-pause-btn:hover {
+        transform: scale(1.1);
+    }
+</style>
