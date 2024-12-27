@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drakkar</title>
     <style>
-        /* Link to your custom font from GitHub Pages */
         @font-face {
             font-family: 'Art Dystopia';
             src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
@@ -13,28 +12,26 @@
             font-style: normal;
         }
 
-        /* Basic CSS styling */
         body {
             margin: 0;
             padding: 0;
-            color: white; /* Set text color to white */
-            font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
+            color: white;
+            font-family: 'Art Dystopia', sans-serif;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Changed to flex-start to align content at the top */
-            align-items: center; /* Center content horizontally */
+            justify-content: flex-start;
+            align-items: center;
             text-align: center;
             line-height: 1.5;
-            padding: 40px 20px; /* Add padding to the top to lower everything down */
-            overflow-y: scroll; /* Allow vertical scrolling */
-            height: 100vh; /* Ensure the body takes up the full height */
-            position: relative; /* Positioning context for the noise overlay */
-            background-color: white; /* Set background to white initially */
-            opacity: 1; /* Page is visible initially */
-            transition: background-color 1s ease; /* Smooth transition for background change */
+            padding: 40px 20px;
+            overflow-y: scroll;
+            height: 100vh;
+            position: relative;
+            background-color: white;
+            opacity: 1;
+            transition: background-color 1s ease;
         }
 
-        /* Style for the logo (clickable) */
         #logo {
             position: absolute;
             top: 50%;
@@ -43,44 +40,44 @@
             max-width: 80%;
             height: auto;
             cursor: pointer;
-            z-index: 10; /* Keep the logo on top initially */
+            z-index: 10;
+            transition: opacity 1s ease, filter 2s ease; /* Added transitions */
         }
 
-        /* Title and Subtitle (will be revealed after clicking the logo) */
         h1 {
-            font-size: 6rem; /* Large size for "DRAKKAR" */
-            letter-spacing: 0.3rem; /* Optional spacing for style */
+            font-size: 6rem;
+            letter-spacing: 0.3rem;
             margin: 0;
-            transition: transform 0.3s ease; /* Animation transition */
+            transition: transform 0.3s ease;
         }
 
         .nixe {
-            font-size: 3rem; /* Smaller than DRAKKAR and the date */
+            font-size: 3rem;
             margin: 1rem 0;
-            text-transform: uppercase; /* Make it all caps */
-            transition: transform 0.3s ease; /* Animation transition */
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
         }
 
         .release-date {
-            font-size: 2.5rem; /* Slightly smaller than "DRAKKAR" */
+            font-size: 2.5rem;
             margin: 1rem 0;
-            text-transform: uppercase; /* Make the date all caps */
-            transition: transform 0.3s ease; /* Animation transition */
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
         }
 
         .track-list {
-            font-size: 2rem; /* Increased font size for better visibility */
-            margin-top: 5rem; /* Increased margin for more space */
+            font-size: 2rem;
+            margin-top: 5rem;
             text-align: left;
             line-height: 2;
-            max-width: 600px; /* Limit width for track list */
+            max-width: 600px;
             margin: 0 auto;
-            transition: transform 0.3s ease; /* Animation transition */
+            transition: transform 0.3s ease;
         }
 
         .track-list li {
             margin: 0.5rem 0;
-            transition: transform 0.3s ease; /* Animation transition */
+            transition: transform 0.3s ease;
         }
 
         img {
@@ -88,40 +85,48 @@
             margin: 20px auto;
             max-width: 90%;
             height: auto;
-            transition: filter 1s ease; /* Add transition for pixelation effect */
+            transition: filter 1s ease;
         }
 
         a {
             color: white;
             text-decoration: underline;
-            font-size: 12rem; /* Double the size of the original IG post */
-            margin-top: 40px; /* Adjust margin to suit your layout */
+            font-size: 12rem;
+            margin-top: 40px;
             display: block;
-            transition: transform 0.3s ease; /* Animation transition */
+            transition: transform 0.3s ease;
         }
 
-        /* Hover animation for text */
         h1:hover, .nixe:hover, .release-date:hover, a:hover {
-            transform: translateY(-10px); /* Moves the text up a little on hover */
+            transform: translateY(-10px);
         }
 
-        /* Hover animation for track list */
         .track-list li:hover {
-            transform: translateY(-5px); /* Moves the track list item up slightly on hover */
+            transform: translateY(-5px);
         }
 
-        /* Pixelation effect */
         .pixelated {
-            filter: blur(5px); /* Apply initial blur for pixelation effect */
+            filter: blur(5px);
         }
 
         .pixelated:hover {
-            filter: blur(0); /* Remove blur on hover */
+            filter: blur(0);
         }
 
-        /* Hide content initially */
         .hidden-content {
             display: none;
+        }
+
+        /* New CSS for fade-out effect on logo */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Background fade transition */
+        .background-transition {
+            opacity: 1;
+            transition: opacity 1s ease;
         }
     </style>
 </head>
@@ -129,9 +134,8 @@
     <!-- Logo Image (clickable) -->
     <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
 
-    <!-- Hidden Content, initially not visible -->
+    <!-- Hidden Content (initially hidden) -->
     <div class="hidden-content">
-        <!-- Title and Subtitle (will be revealed after clicking the logo) -->
         <h1>DRAKKAR</h1>
         <div class="nixe">NIXE!</div>
         <div class="release-date">FEBRUARY 13TH, 2025</div>
@@ -173,14 +177,30 @@
     <script>
         // When the logo is clicked
         document.getElementById('logo').addEventListener('click', function() {
-            // Change the background to the drakkar background
-            document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
-            document.body.style.backgroundSize = "cover"; // Ensure the background image covers the screen
-            document.body.style.backgroundPosition = "center"; // Center the background image
+            // Apply fade-out effect to the logo
+            this.classList.add('fade-out');
 
-            // Show the rest of the content after logo click
-            document.querySelector('.hidden-content').style.display = "block"; // Reveal the content
+            // Wait for the fade-out to complete before making other changes
+            setTimeout(function() {
+                // Change the background to the drakkar background
+                document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
+                document.body.style.backgroundSize = "cover"; // Ensure the background image covers the screen
+                document.body.style.backgroundPosition = "center"; // Center the background image
+                document.body.classList.add('background-transition'); // Apply the background transition
+
+                // Show the rest of the content after the logo fades out
+                document.querySelector('.hidden-content').style.display = "block";
+
+                // Apply pixelation effect to the album cover
+                document.getElementById('album-cover').classList.remove('pixelated');
+            }, 1000); // Time to wait for fade-out to finish
         });
+
+        // Start playing the audio automatically when the page loads
+        window.onload = function() {
+            var audio = document.getElementById('background-audio');
+            audio.play(); // Make sure the audio starts when the page loads
+        };
     </script>
 </body>
 </html>
