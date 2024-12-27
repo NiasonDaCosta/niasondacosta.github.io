@@ -29,24 +29,25 @@
             overflow-y: scroll; /* Allow vertical scrolling */
             height: 100vh; /* Ensure the body takes up the full height */
             position: relative; /* Positioning context for the noise overlay */
-            background-color: black; /* Set background to black initially */
-            opacity: 0; /* Make page invisible initially */
-            transition: opacity 2s ease-in-out; /* Fade in effect */
+            background-color: white; /* Set background to white initially */
+            opacity: 1; /* Page is visible initially */
+            transition: background-color 1s ease; /* Smooth transition for background change */
         }
 
-        /* Style for initial image */
-        #initial-image {
+        /* Style for the logo (clickable) */
+        #logo {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             max-width: 80%;
             height: auto;
-            z-index: 10; /* Keep the image on top initially */
-            opacity: 1; /* Ensure it's visible initially */
-            transition: opacity 2s ease-in-out; /* Fade out effect */
+            cursor: pointer;
+            z-index: 10; /* Keep the logo on top initially */
+            transition: transform 0.3s ease; /* Animation transition for hover */
         }
 
+        /* Title and Subtitle (will be revealed after clicking the logo) */
         h1 {
             font-size: 6rem; /* Large size for "DRAKKAR" */
             letter-spacing: 0.3rem; /* Optional spacing for style */
@@ -119,19 +120,17 @@
             filter: blur(0); /* Remove blur on hover */
         }
 
-        /* The fading effect (Thanos snap) */
-        .fade-in {
-            opacity: 1 !important;
-            transition: opacity 2s ease-in-out;
+        /* Float effect on the logo */
+        #logo:hover {
+            transform: translateY(-10px); /* Makes the logo float up slightly */
         }
-
     </style>
 </head>
 <body>
-    <!-- Initial Image -->
-    <img id="initial-image" src="download-vamp.png" alt="Initial Image">
+    <!-- Logo Image (clickable) -->
+    <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
 
-    <!-- Title and Subtitle (will be revealed after fade) -->
+    <!-- Title and Subtitle (will be revealed after clicking the logo) -->
     <h1>DRAKKAR</h1>
     <div class="nixe">NIXE!</div>
     <div class="release-date">FEBRUARY 13TH, 2025</div>
@@ -170,27 +169,18 @@
     </audio>
 
     <script>
-        window.onload = function() {
-            const audio = document.getElementById('background-audio');
-            const body = document.body;
-            const initialImage = document.getElementById('initial-image');
+        // When the logo is clicked
+        document.getElementById('logo').addEventListener('click', function() {
+            // Change the background to the drakkar background
+            document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
+            document.body.style.backgroundSize = "cover"; // Ensure the background image covers the screen
+            document.body.style.backgroundPosition = "center"; // Center the background image
 
-            // Start audio as soon as the page loads
-            audio.play();
-
-            // Fade effect for the page (Thanos snap)
-            body.style.opacity = 1;
-
-            // Fade out the initial image
-            setTimeout(function() {
-                initialImage.style.opacity = 0;
-            }, 2000); // Set timeout to remove initial image after 2 seconds
-
-            // Add fade-in effect for content
-            setTimeout(function() {
-                body.classList.add('fade-in');
-            }, 3000); // Wait for 3 seconds to add fade-in class
-        };
+            // Show the rest of the content after logo click
+            document.getElementById('album-cover').style.display = "block"; // Show the album cover
+            document.querySelector('.track-list').style.display = "block"; // Show the track list
+            document.querySelector('a').style.display = "block"; // Show the IG post link
+        });
     </script>
 </body>
 </html>
