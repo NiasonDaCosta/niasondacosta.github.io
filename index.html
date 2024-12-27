@@ -37,16 +37,16 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(0); /* Start at 0 scale */
             max-width: 80%;
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: transform 0.5s ease; /* Add scale transition for small-to-big effect */
+            transition: transform 1s ease; /* Transition for scaling */
         }
 
-        #logo:hover {
-            transform: translate(-50%, -50%) scale(1.2); /* Small-to-big effect */
+        #logo.loaded {
+            transform: translate(-50%, -50%) scale(1); /* Full size when loaded */
         }
 
         h1 {
@@ -205,6 +205,11 @@
     <button id="play-pause-btn" onclick="toggleAudio()">▶</button>
 
     <script>
+        // Wait for the page to load and apply the scale animation to the logo
+        window.addEventListener('load', function() {
+            document.getElementById('logo').classList.add('loaded');
+        });
+
         document.getElementById('logo').addEventListener('click', function() {
             var logo = this;
             logo.classList.add('fade-out');
