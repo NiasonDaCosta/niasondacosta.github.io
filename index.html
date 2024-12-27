@@ -49,29 +49,28 @@
             transform: translate(-50%, -50%) scale(1); /* Full size when loaded */
         }
 
-        h1 {
+        h1, .nixe, .release-date {
             font-size: 3rem;
             letter-spacing: 0.3rem;
             margin: 0;
             transition: transform 0.3s ease;
+            display: inline-block;
         }
 
         .nixe {
             font-size: 2rem;
             margin: 1rem 0;
             text-transform: uppercase;
-            transition: transform 0.3s ease;
         }
 
         .release-date {
             font-size: 1.75rem;
             margin: 1rem 0;
             text-transform: uppercase;
-            transition: transform 0.3s ease;
         }
 
         .track-list {
-            font-size: 1rem; /* Adjusted smaller size */
+            font-size: 1.25rem;
             margin-top: 5rem;
             text-align: left;
             line-height: 2;
@@ -104,7 +103,7 @@
             transition: transform 0.3s ease;
         }
 
-        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+        h1:hover, .nixe:hover, .release-date:hover, a:hover, .track-list li:hover {
             transform: translateY(-10px);
         }
 
@@ -163,6 +162,12 @@
         #play-pause-btn:hover {
             transform: scale(1.1);
         }
+
+        /* Hover effect on album cover with darkening */
+        #album-cover:hover {
+            filter: brightness(70%);
+        }
+
     </style>
 </head>
 <body>
@@ -193,9 +198,9 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Replaced with the new Instagram logo PNG -->
+        <!-- Instagram Logo -->
         <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Instagram Logo">
         </a>
     </div>
 
