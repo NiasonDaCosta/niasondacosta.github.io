@@ -193,7 +193,7 @@
 
         <!-- Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
-            <img class="instagram-post" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
+            <img class="instagram-post" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG POST">
         </a>
     </div>
 
@@ -225,6 +225,13 @@
 
                 // Apply pixelation effect to the album cover
                 document.getElementById('album-cover').classList.remove('pixelated');
+
+                // Start audio play if paused
+                var audio = document.getElementById('background-audio');
+                if (audio.paused) {
+                    audio.play();
+                    document.getElementById('play-pause-btn').innerHTML = '❚❚';  // Change to pause button
+                }
             }, 1000); // Time to wait for fade-out to finish
         });
 
