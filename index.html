@@ -192,9 +192,9 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Replaced with download-vamp.png -->
-        <a href="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/download-vamp.png" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/download-vamp.png" alt="Download Vamp PNG">
+        <!-- Replaced with the new Instagram logo PNG -->
+        <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Download Instagram PNG">
         </a>
     </div>
 
@@ -208,6 +208,11 @@
         // Wait for the page to load and apply the scale animation to the logo
         window.addEventListener('load', function() {
             document.getElementById('logo').classList.add('loaded');
+        });
+
+        document.getElementById('logo').addEventListener('transitionend', function() {
+            // Reset the scale after the scaling animation ends
+            this.style.transform = 'translate(-50%, -50%) scale(1)';
         });
 
         document.getElementById('logo').addEventListener('click', function() {
