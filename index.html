@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drakkar</title>
     <style>
+        /* Link to your custom font from GitHub Pages */
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('https://NiasonDaCosta.github.io/NiasonDaCosta.github.io/art%20dystopia.otf') format('opentype');
+            src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
         }
 
+        /* Basic CSS styling */
         body {
             margin: 0;
             padding: 0;
-            background-color: black;
-            color: white;
-            font-family: 'Art Dystopia', sans-serif;
+            background-color: black; /* Set background to black */
+            color: white; /* Set text color to white */
+            font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
             text-align: center;
+            line-height: 1.5;
+            padding: 20px; /* Add padding for better spacing */
         }
 
         h1 {
-            font-size: 5rem;
-            margin: 20px 0;
+            font-size: 6rem; /* Large size for "DRAKKAR" */
+            letter-spacing: 0.3rem; /* Optional spacing for style */
+            margin: 0;
         }
 
-        h2 {
-            font-size: 3rem;
-            margin: 10px 0 20px;
+        .nixe {
+            font-size: 3rem; /* Smaller than DRAKKAR and the date */
+            margin: 1rem 0;
+            text-transform: uppercase; /* Make it all caps */
         }
 
-        p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin: 20px 0;
+        .release-date {
+            font-size: 2.5rem; /* Slightly smaller than "DRAKKAR" */
+            margin: 1rem 0;
+            text-transform: uppercase; /* Make the date all caps */
         }
 
-        a {
-            color: white;
-            text-decoration: underline;
-            font-size: 1.2rem;
-            margin: 20px 0;
+        .track-list {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+            line-height: 2;
+            max-width: 600px; /* Limit width for track list */
+            margin: 0 auto;
+        }
+
+        .track-list li {
+            margin: 0.5rem 0;
         }
 
         img {
@@ -53,33 +67,39 @@
             height: auto;
         }
 
-        .tracklist {
+        a {
+            color: white;
+            text-decoration: underline;
+            font-size: 1.2rem;
             margin: 20px 0;
-            text-align: left;
-            font-size: 1.5rem;
         }
     </style>
 </head>
-
 <body>
     <!-- Title and Subtitle -->
-    <h1>Nixe!</h1>
-    <h2>Drakkar: XII Zenith Cessation</h2>
+    <h1>DRAKKAR</h1>
+    <div class="nixe">NIXE!</div>
+    <div class="release-date">FEBRUARY 13TH, 2025</div>
 
     <!-- Drakkar Album Cover -->
     <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
 
     <!-- Track List -->
-    <div class="tracklist">
-        <h3>Track List:</h3>
-        <p>
-            1. Intro: The Beginning<br>
-            2. Zenith<br>
-            3. Cessation<br>
-            4. Eternal Voyage<br>
-            5. Last Breath<br>
-        </p>
-    </div>
+    <ul class="track-list">
+        <li>I. TECH</li>
+        <li>II. WRAITH</li>
+        <li>III. OIL</li>
+        <li>IV. HATRED</li>
+        <li>V. POTTY LANGUAGE</li>
+        <li>VI. TE11 ME DIFF3R3NT</li>
+        <li>VII. ROCKSTXR</li>
+        <li>VIII. D3ATH UP0N M3</li>
+        <li>IX. REVENANT</li>
+        <li>X. VAMP</li>
+        <li>XI. WATCH MY SIX</li>
+        <li>XII. CONCRETE</li>
+        <li>XIII. ZENITH CESSATION</li>
+    </ul>
 
     <!-- Instagram Link -->
     <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
@@ -87,5 +107,4 @@
     <!-- Download PNG -->
     <img src="download-vamp.png" alt="Download Vamp Image">
 </body>
-
 </html>
