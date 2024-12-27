@@ -17,7 +17,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: black; /* Set background to black */
+            background-color: #0D0000; /* Deep red background color */
             color: white; /* Set text color to white */
             font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
@@ -27,6 +27,7 @@
             text-align: center;
             line-height: 1.5;
             padding: 20px; /* Add padding for better spacing */
+            overflow: hidden; /* Hide overflow for noise animation */
         }
 
         h1 {
@@ -70,8 +71,27 @@
         a {
             color: white;
             text-decoration: underline;
-            font-size: 1.2rem;
-            margin: 20px 0;
+            font-size: 2rem; /* Larger font size for IG post */
+            margin-top: 40px; /* Extra margin to push it farther down */
+            display: block;
+        }
+
+        /* Noise Animation */
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Static_white_noise.png') repeat; /* Replace with your noise texture */
+            opacity: 0.1; /* Transparency of the noise */
+            animation: noise-animation 0.5s steps(10) infinite;
+        }
+
+        @keyframes noise-animation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
         }
     </style>
 </head>
@@ -106,5 +126,8 @@
 
     <!-- Download PNG -->
     <img src="download-vamp.png" alt="Download Vamp Image">
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
 </body>
 </html>
