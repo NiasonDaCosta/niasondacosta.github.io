@@ -119,16 +119,6 @@
             transition: opacity 2s ease;
         }
 
-        .fade-out {
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .background-transition {
-            opacity: 1;
-            transition: opacity 1s ease;
-        }
-
         /* Instagram Post Resize (Smaller) */
         .IG\ POST {
             max-width: 500px; /* Reduced size */
@@ -156,6 +146,18 @@
 
         #play-pause-btn:hover {
             transform: scale(1.1);
+        }
+
+        /* New fade-out method */
+        .fade-out {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        .background-transition {
+            opacity: 1;
+            transition: opacity 1s ease;
         }
 
     </style>
@@ -194,7 +196,7 @@
 
         <!-- Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
+            <img class="IG POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG POST">
         </a>
     </div>
 
@@ -209,7 +211,7 @@
     <script>
         // When the logo is clicked
         document.getElementById('logo').addEventListener('click', function() {
-            // Apply fade-out effect to the logo
+            // Apply fade-out effect to the logo using the new method
             this.classList.add('fade-out');
 
             // Wait for the fade-out to complete before making other changes
@@ -255,21 +257,6 @@
                 btn.innerHTML = '▶';  // Change to play button
             }
         }
-
-        // Ensure audio loops indefinitely
-        document.getElementById('background-audio').addEventListener('ended', function() {
-            this.currentTime = 0;
-            this.play();
-        });
-
-        // Add the initial animations for the logo
-        window.onload = function() {
-            var logo = document.getElementById('logo');
-            setTimeout(function() {
-                logo.style.transform = "translate(-50%, -50%) scale(1)";
-                logo.style.opacity = 1;
-            }, 500); // Start the animation 0.5s after the page loads
-        };
     </script>
 </body>
 </html>
