@@ -37,12 +37,16 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%) scale(1);
             max-width: 80%;
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: opacity 1s ease; /* Removed transform scaling */
+            transition: transform 0.5s ease; /* Add scale transition for small-to-big effect */
+        }
+
+        #logo:hover {
+            transform: translate(-50%, -50%) scale(1.2); /* Small-to-big effect */
         }
 
         h1 {
@@ -188,9 +192,9 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Replaced with download PNG link -->
-        <a href="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/DRAKKAR_track-list_nixe.jpg" target="_blank">
-            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/DRAKKAR_track-list_nixe.jpg" alt="Download PNG">
+        <!-- Replaced with download-vamp.png -->
+        <a href="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/download-vamp.png" target="_blank">
+            <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/56f33c45cf2182783293ce986169e15d92e3d330/download-vamp.png" alt="Download Vamp PNG">
         </a>
     </div>
 
