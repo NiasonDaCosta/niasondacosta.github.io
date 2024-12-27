@@ -37,7 +37,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%);
             max-width: 80%;
             height: auto;
             cursor: pointer;
@@ -204,7 +204,7 @@
             var logo = this;
             logo.classList.add('fade-out');
             setTimeout(function() {
-                logo.style.display = "none";
+                logo.style.display = "none"; // Ensure the logo is hidden after click
                 document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
                 document.body.style.backgroundSize = "cover";
                 document.body.style.backgroundPosition = "center";
