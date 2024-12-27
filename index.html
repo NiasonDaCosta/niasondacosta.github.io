@@ -41,7 +41,7 @@
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: opacity 1s ease, filter 2s ease; /* Added transitions */
+            transition: opacity 1s ease, filter 2s ease;
         }
 
         h1 {
@@ -115,18 +115,45 @@
 
         .hidden-content {
             display: none;
+            opacity: 0;
+            transition: opacity 2s ease;
         }
 
-        /* New CSS for fade-out effect on logo */
         .fade-out {
             opacity: 0;
             transition: opacity 1s ease;
         }
 
-        /* Background fade transition */
         .background-transition {
             opacity: 1;
             transition: opacity 1s ease;
+        }
+
+        /* Instagram Post Resize */
+        .instagram-post {
+            max-width: 600px;
+            height: auto;
+            margin: 20px auto;
+            transition: all 0.5s ease;
+        }
+
+        /* Play/Pause Button */
+        #play-pause-btn {
+            position: absolute;
+            bottom: 20px;
+            z-index: 20;
+            padding: 10px 20px;
+            font-size: 2rem;
+            background-color: #111;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #play-pause-btn:hover {
+            background-color: #333;
         }
     </style>
 </head>
@@ -162,19 +189,35 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Instagram Link -->
-        <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
-
-        <!-- Download PNG -->
-        <img src="download-vamp.png" alt="Download Vamp Image">
+        <!-- Instagram Post (doubled in size) -->
+        <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
+            <img class="instagram-post" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
+        </a>
     </div>
 
     <!-- Audio Player -->
-    <audio id="background-audio" autoplay loop>
+    <audio id="background-audio" preload="auto">
         <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
     </audio>
 
+    <!-- Play/Pause Button -->
+    <button id="play-pause-btn">Play</button>
+
     <script>
+        // Play/Pause Button functionality
+        let audio = document.getElementById('background-audio');
+        let playPauseButton = document.getElementById('play-pause-btn');
+
+        playPauseButton.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.innerText = "Pause";
+            } else {
+                audio.pause();
+                playPauseButton.innerText = "Play";
+            }
+        });
+
         // When the logo is clicked
         document.getElementById('logo').addEventListener('click', function() {
             // Apply fade-out effect to the logo
@@ -184,12 +227,13 @@
             setTimeout(function() {
                 // Change the background to the drakkar background
                 document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/drakkar%20image%20background.png')";
-                document.body.style.backgroundSize = "cover"; // Ensure the background image covers the screen
-                document.body.style.backgroundPosition = "center"; // Center the background image
-                document.body.classList.add('background-transition'); // Apply the background transition
+                document.body.style.backgroundSize = "cover";
+                document.body.style.backgroundPosition = "center";
+                document.body.classList.add('background-transition');
 
                 // Show the rest of the content after the logo fades out
                 document.querySelector('.hidden-content').style.display = "block";
+                document.querySelector('.hidden-content').style.opacity = 1;
 
                 // Apply pixelation effect to the album cover
                 document.getElementById('album-cover').classList.remove('pixelated');
@@ -199,7 +243,7 @@
         // Start playing the audio automatically when the page loads
         window.onload = function() {
             var audio = document.getElementById('background-audio');
-            audio.play(); // Make sure the audio starts when the page loads
+            audio.play();
         };
     </script>
 </body>
