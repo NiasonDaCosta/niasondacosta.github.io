@@ -7,7 +7,7 @@
     <style>
         @font-face {
             font-family: 'Art Dystopia';
-            src: url('https://NiasonDaCosta.github.io/NiasonDaCosta.github.io/art%20dystopia.otf') format('opentype');
+            src: url('Art Dystopia.otf') format('opentype');
         }
 
         body {
@@ -20,53 +20,47 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0.5em 0;
         }
 
         h1 {
             font-size: 5rem;
             letter-spacing: 0.1em;
-            margin: 0;
         }
 
-        .content {
-            margin-top: 2rem;
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1em;
         }
 
-        .content a {
+        a {
             color: white;
-            text-decoration: none;
+            text-decoration: underline;
             font-size: 1.2rem;
+            margin-top: 1em;
         }
 
-        .content img {
-            max-width: 100%;
-            height: auto;
+        img {
             display: block;
-            margin: 1rem auto;
-        }
-
-        .ig-link {
-            margin-top: 1rem;
-            font-size: 1.2rem;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <h1>Drakkar: XII Zenith Cessation</h1>
+    <h1>Nixe!</h1>
+    <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+    <h2>Drakkar: XII Zenith Cessation</h2>
 
-    <div class="content">
-        <!-- IG Post Link -->
-        <a class="ig-link" href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST.</a>
-        
-        <!-- Drakkar Image with Link -->
-        <a href="https://linktr.ee/officialnixe" target="_blank">
-            <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/5e28169d58d6694013e2d9771637859c1da017e2/drakkar.png?raw=true" alt="Drakkar Image">
-        </a>
+    <!-- Instagram Link -->
+    <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
 
-        <!-- Download Vamp Image -->
-        <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/5e28169d58d6694013e2d9771637859c1da017e2/download-vamp.png?raw=true" alt="Download Vamp">
-    </div>
+    <!-- Download Vamp Image -->
+    <img src="download-vamp.png" alt="Download Vamp Image">
 </body>
 </html>
