@@ -130,7 +130,7 @@
         }
 
         /* Instagram Post Resize (Smaller) */
-        .instagram-post {
+        .IG-POST {
             max-width: 500px; /* Reduced size */
             height: auto;
             margin: 20px auto;
@@ -142,7 +142,7 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #ff6347;
+            background-color: black; /* Changed to black */
             border: none;
             color: white;
             font-size: 3rem;
@@ -193,7 +193,7 @@
 
         <!-- Instagram Post -->
         <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">
-            <img class="instagram-post" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG POST">
+            <img class="IG-POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/Instagram_Post_Image.png" alt="IG Post">
         </a>
     </div>
 
@@ -245,6 +245,7 @@
         function toggleAudio() {
             var audio = document.getElementById('background-audio');
             var btn = document.getElementById('play-pause-btn');
+
             if (audio.paused) {
                 audio.play();
                 btn.innerHTML = '❚❚';  // Change to pause button
