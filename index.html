@@ -17,7 +17,6 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #2D0000; /* Deep red background color */
             color: white; /* Set text color to white */
             font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
@@ -30,6 +29,7 @@
             overflow-y: scroll; /* Allow vertical scrolling */
             height: 100vh; /* Ensure the body takes up the full height */
             position: relative; /* Positioning context for the noise overlay */
+            transition: background-color 0.3s ease; /* Smooth transition for background color change */
         }
 
         h1 {
@@ -54,16 +54,18 @@
         }
 
         .track-list {
-            font-size: 1.5rem;
+            font-size: 2rem; /* Increased font size for better visibility */
             margin-top: 5rem; /* Increased margin for more space */
             text-align: left;
             line-height: 2;
             max-width: 600px; /* Limit width for track list */
             margin: 0 auto;
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         .track-list li {
             margin: 0.5rem 0;
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         img {
@@ -76,8 +78,8 @@
         a {
             color: white;
             text-decoration: underline;
-            font-size: 6rem; /* Same size as "DRAKKAR" */
-            margin-top: 20px; /* Adjust margin to suit your layout */
+            font-size: 12rem; /* Double the size of the original IG post */
+            margin-top: 40px; /* Adjust margin to suit your layout */
             display: block;
             transition: transform 0.3s ease; /* Animation transition */
         }
@@ -104,7 +106,13 @@
         h1:hover, .nixe:hover, .release-date:hover, a:hover {
             transform: translateY(-10px); /* Moves the text up a little on hover */
         }
+
+        /* Hover animation for track list */
+        .track-list li:hover {
+            transform: translateY(-5px); /* Moves the track list item up slightly on hover */
+        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-vibrant/3.1.6/vibrant.min.js"></script> <!-- Vibrant.js -->
 </head>
 <body>
     <!-- Title and Subtitle -->
@@ -114,7 +122,7 @@
 
     <!-- Clickable Album Cover -->
     <a href="https://linktr.ee/officialnixe" target="_blank">
-        <img src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+        <img id="album-cover" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
     </a>
 
     <!-- Track List -->
@@ -142,5 +150,17 @@
 
     <!-- Noise Overlay -->
     <div class="noise-overlay"></div>
+
+    <script>
+        // Function to extract the dominant color from the album cover image
+        window.onload = function() {
+            const imageElement = document.getElementById('album-cover');
+            const vibrant = new Vibrant(imageElement);
+            vibrant.getPalette().then((palette) => {
+                const dominantColor = palette.Vibrant.hex; // Get the vibrant color
+                document.body.style.backgroundColor = dominantColor; // Set it as the background color
+            });
+        };
+    </script>
 </body>
 </html>
