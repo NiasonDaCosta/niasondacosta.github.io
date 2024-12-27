@@ -44,7 +44,6 @@
             height: auto;
             cursor: pointer;
             z-index: 10; /* Keep the logo on top initially */
-            transition: transform 0.3s ease; /* Animation transition for hover */
         }
 
         /* Title and Subtitle (will be revealed after clicking the logo) */
@@ -120,9 +119,9 @@
             filter: blur(0); /* Remove blur on hover */
         }
 
-        /* Float effect on the logo */
-        #logo:hover {
-            transform: translateY(-10px); /* Makes the logo float up slightly */
+        /* Hide content initially */
+        .hidden-content {
+            display: none;
         }
     </style>
 </head>
@@ -130,42 +129,45 @@
     <!-- Logo Image (clickable) -->
     <img id="logo" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/3b7d63cce73d02249d4f94d752adb27c29797f9f/VAMPSTARZ%20logo%20-%202.png" alt="Vampstar Logo">
 
-    <!-- Title and Subtitle (will be revealed after clicking the logo) -->
-    <h1>DRAKKAR</h1>
-    <div class="nixe">NIXE!</div>
-    <div class="release-date">FEBRUARY 13TH, 2025</div>
+    <!-- Hidden Content, initially not visible -->
+    <div class="hidden-content">
+        <!-- Title and Subtitle (will be revealed after clicking the logo) -->
+        <h1>DRAKKAR</h1>
+        <div class="nixe">NIXE!</div>
+        <div class="release-date">FEBRUARY 13TH, 2025</div>
 
-    <!-- Clickable Album Cover -->
-    <a href="https://linktr.ee/officialnixe" target="_blank">
-        <img id="album-cover" class="pixelated" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
-    </a>
+        <!-- Clickable Album Cover -->
+        <a href="https://linktr.ee/officialnixe" target="_blank">
+            <img id="album-cover" class="pixelated" src="DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">
+        </a>
 
-    <!-- Track List -->
-    <ul class="track-list">
-        <li>I. TECH</li>
-        <li>II. WRAITH</li>
-        <li>III. OIL</li>
-        <li>IV. HATRED</li>
-        <li>V. POTTY LANGUAGE</li>
-        <li>VI. TE11 ME DIFF3R3NT</li>
-        <li>VII. ROCKSTXR</li>
-        <li>VIII. D3ATH UP0N M3</li>
-        <li>IX. REVENANT</li>
-        <li>X. VAMP</li>
-        <li>XI. WATCH MY SIX</li>
-        <li>XII. CONCRETE</li>
-        <li>XIII. ZENITH CESSATION</li>
-    </ul>
+        <!-- Track List -->
+        <ul class="track-list">
+            <li>I. TECH</li>
+            <li>II. WRAITH</li>
+            <li>III. OIL</li>
+            <li>IV. HATRED</li>
+            <li>V. POTTY LANGUAGE</li>
+            <li>VI. TE11 ME DIFF3R3NT</li>
+            <li>VII. ROCKSTXR</li>
+            <li>VIII. D3ATH UP0N M3</li>
+            <li>IX. REVENANT</li>
+            <li>X. VAMP</li>
+            <li>XI. WATCH MY SIX</li>
+            <li>XII. CONCRETE</li>
+            <li>XIII. ZENITH CESSATION</li>
+        </ul>
 
-    <!-- Instagram Link -->
-    <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
+        <!-- Instagram Link -->
+        <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST</a>
 
-    <!-- Download PNG -->
-    <img src="download-vamp.png" alt="Download Vamp Image">
+        <!-- Download PNG -->
+        <img src="download-vamp.png" alt="Download Vamp Image">
+    </div>
 
     <!-- Audio Player -->
     <audio id="background-audio" autoplay loop>
-        <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/1e1654cecbd223731a71fd7cdcca3a3f2c53ec6d/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.wav?raw=true" type="audio/wav">
+        <source src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/73c5a4e97dad73e0bc7834ebc502e37f6f060c27/Vampstar_Freestyle_mastered_G%E2%99%AD_minor__bpm_128.mp3?raw=true" type="audio/mp3">
     </audio>
 
     <script>
@@ -177,9 +179,7 @@
             document.body.style.backgroundPosition = "center"; // Center the background image
 
             // Show the rest of the content after logo click
-            document.getElementById('album-cover').style.display = "block"; // Show the album cover
-            document.querySelector('.track-list').style.display = "block"; // Show the track list
-            document.querySelector('a').style.display = "block"; // Show the IG post link
+            document.querySelector('.hidden-content').style.display = "block"; // Reveal the content
         });
     </script>
 </body>
