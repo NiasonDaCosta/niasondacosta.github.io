@@ -22,30 +22,35 @@
             font-family: 'Art Dystopia', sans-serif; /* Use Art Dystopia font */
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
+            justify-content: flex-start; /* Changed to flex-start to align content at the top */
             align-items: center; /* Center content horizontally */
             text-align: center;
             line-height: 1.5;
-            padding: 20px; /* Add padding for better spacing */
-            overflow: hidden; /* Hide overflow for noise animation */
+            padding: 40px 20px; /* Add padding to the top to lower everything down */
+            overflow-y: scroll; /* Allow vertical scrolling */
+            height: 100vh; /* Ensure the body takes up the full height */
+            position: relative; /* Positioning context for the noise overlay */
         }
 
         h1 {
             font-size: 6rem; /* Large size for "DRAKKAR" */
             letter-spacing: 0.3rem; /* Optional spacing for style */
             margin: 0;
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         .nixe {
             font-size: 3rem; /* Smaller than DRAKKAR and the date */
             margin: 1rem 0;
             text-transform: uppercase; /* Make it all caps */
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         .release-date {
             font-size: 2.5rem; /* Slightly smaller than "DRAKKAR" */
             margin: 1rem 0;
             text-transform: uppercase; /* Make the date all caps */
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         .track-list {
@@ -71,9 +76,10 @@
         a {
             color: white;
             text-decoration: underline;
-            font-size: 2rem; /* Larger font size for IG post */
-            margin-top: 40px; /* Extra margin to push it farther down */
+            font-size: 6rem; /* Same size as "DRAKKAR" */
+            margin-top: 20px; /* Adjust margin to suit your layout */
             display: block;
+            transition: transform 0.3s ease; /* Animation transition */
         }
 
         /* Noise Animation */
@@ -85,13 +91,18 @@
             height: 100%;
             pointer-events: none;
             background: url('https://upload.wikimedia.org/wikipedia/commons/e/eb/Static_white_noise.png') repeat; /* Replace with your noise texture */
-            opacity: 0.1; /* Transparency of the noise */
+            opacity: 0.2; /* Increased opacity for better visibility */
             animation: noise-animation 0.5s steps(10) infinite;
         }
 
         @keyframes noise-animation {
             0% { background-position: 0 0; }
             100% { background-position: 100% 100%; }
+        }
+
+        /* Hover animation for text */
+        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+            transform: translateY(-10px); /* Moves the text up a little on hover */
         }
     </style>
 </head>
