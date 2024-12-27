@@ -30,26 +30,26 @@
             background-color: white;
             opacity: 1;
             transition: background-color 1s ease;
-            font-size: 16px; /* Base font size */
+            font-size: 16px;
         }
 
         #logo {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0); /* Start at 0 scale */
+            transform: translate(-50%, -50%) scale(0);
             max-width: 80%;
             height: auto;
             cursor: pointer;
             z-index: 10;
-            transition: transform 1s ease; /* Transition for scaling */
+            transition: transform 1s ease;
         }
 
         #logo.loaded {
-            transform: translate(-50%, -50%) scale(1); /* Full size when loaded */
+            transform: translate(-50%, -50%) scale(1);
         }
 
-        h1, .nixe, .release-date {
+        h1, .nixe, .release-date, .track-list li {
             font-size: 3rem;
             letter-spacing: 0.3rem;
             margin: 0;
@@ -82,7 +82,7 @@
 
         .track-list li {
             margin: 0.5rem 0;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         img {
@@ -102,13 +102,9 @@
             transition: transform 0.3s ease;
         }
 
-        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+        h1:hover, .nixe:hover, .release-date:hover, a:hover, .track-list li:hover {
             transform: translateY(-10px);
-            opacity: 0.8; /* Make it slightly transparent on hover */
-        }
-
-        .track-list li:hover {
-            transform: translateY(-5px);
+            opacity: 0.8;
         }
 
         .pixelated {
@@ -137,7 +133,7 @@
         }
 
         .IG\ POST {
-            width: 52.5px; /* Adjust to 65% of original size */
+            width: 52.5px; /* Reduced to 65% of the original size */
             height: auto;
             margin: 20px auto;
             transition: all 0.5s ease;
@@ -192,7 +188,7 @@
             <li>XIII. ZENITH CESSATION</li>
         </ul>
 
-        <!-- Replaced with the new Instagram logo PNG -->
+        <!-- Reduced Instagram logo size to 65% -->
         <a href="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" target="_blank">
             <img class="IG\ POST" src="https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Download Instagram PNG">
         </a>
@@ -227,7 +223,7 @@
                 document.querySelector('.hidden-content').style.opacity = 1;
 
                 // Add pixelated effect to elements when they appear
-                var elementsToPixelate = document.querySelectorAll('#album-cover, h1, .nixe, .release-date');
+                var elementsToPixelate = document.querySelectorAll('#album-cover, h1, .nixe, .release-date, .track-list li');
                 elementsToPixelate.forEach(function(element) {
                     element.classList.add('pixelated');
                     setTimeout(function() {
