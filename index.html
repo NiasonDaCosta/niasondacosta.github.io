@@ -1,164 +1,239 @@
-<style>
-    @font-face {
-        font-family: 'Art Dystopia';
-        src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampstarz Page</title>
+    <style>
+        @font-face {
+            font-family: 'Art Dystopia';
+            src: url('https://raw.githubusercontent.com/NiasonDaCosta/niasondacosta.github.io/2036378ee588f0388fedb4aacad90c591e666574/Art%20Dystopia.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
 
-    body {
-        margin: 0;
-        padding: 0;
-        color: white;
-        font-family: 'Art Dystopia', sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        text-align: center;
-        line-height: 1.5;
-        padding: 40px 20px;
-        overflow-y: scroll;
-        height: 100vh;
-        position: relative;
-        background-color: white;
-        opacity: 1;
-        transition: background-color 1s ease;
-        font-size: 16px;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: 'Art Dystopia', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            line-height: 1.5;
+            padding: 40px 20px;
+            overflow-y: scroll;
+            height: 100vh;
+            position: relative;
+            background-color: white;
+            opacity: 1;
+            transition: background-color 1s ease;
+            font-size: 16px;
+        }
 
-    #logo {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        max-width: 80%;
-        height: auto;
-        cursor: pointer;
-        z-index: 10;
-        transition: transform 1s ease;
-    }
+        #logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            max-width: 80%;
+            height: auto;
+            cursor: pointer;
+            z-index: 10;
+            transition: transform 1s ease;
+        }
 
-    #logo.loaded {
-        transform: translate(-50%, -50%) scale(1);
-    }
+        #logo.loaded {
+            transform: translate(-50%, -50%) scale(1);
+        }
 
-    h1, .nixe, .release-date {
-        font-size: 3rem;
-        letter-spacing: 0.3rem;
-        margin: 0;
-        transition: transform 0.3s ease-in-out;
-        opacity: 0;
-        transition: opacity 1s ease-out, transform 1s ease-out;
-    }
+        h1, .nixe, .release-date {
+            font-size: 3rem;
+            letter-spacing: 0.3rem;
+            margin: 0;
+            transition: opacity 1s ease-out, transform 1s ease-out;
+            opacity: 0;
+        }
 
-    h1 {
-        font-size: 3rem;
-    }
+        h1 {
+            font-size: 3rem;
+        }
 
-    .nixe {
-        font-size: 2rem;
-        margin: 1rem 0;
-        text-transform: uppercase;
-    }
+        .nixe {
+            font-size: 2rem;
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
 
-    .release-date {
-        font-size: 1.75rem;
-        margin: 1rem 0;
-        text-transform: uppercase;
-    }
+        .release-date {
+            font-size: 1.75rem;
+            margin: 1rem 0;
+            text-transform: uppercase;
+        }
 
-    .track-list {
-        font-size: 1.25rem;
-        margin-top: 5rem;
-        text-align: left;
-        line-height: 2;
-        max-width: 600px;
-        margin: 0 auto;
-        transition: transform 0.3s ease;
-        list-style-type: none;
-        padding: 0;
-    }
+        .track-list {
+            font-size: 1.25rem;
+            margin-top: 5rem;
+            text-align: left;
+            line-height: 2;
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+            list-style-type: none;
+            padding: 0;
+        }
 
-    .track-list li {
-        margin: 0.5rem 0;
-        transition: transform 0.3s ease;
-    }
+        .track-list li {
+            margin: 0.5rem 0;
+            transition: transform 0.3s ease;
+        }
 
-    img {
-        display: block;
-        margin: 20px auto;
-        max-width: 90%;
-        height: auto;
-        transition: filter 1s ease;
-    }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
+            transition: filter 1s ease;
+        }
 
-    a {
-        color: white;
-        text-decoration: underline;
-        font-size: 3rem;
-        margin-top: 40px;
-        display: block;
-        transition: transform 0.3s ease;
-    }
+        a {
+            color: white;
+            text-decoration: underline;
+            font-size: 3rem;
+            margin-top: 40px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
 
-    h1:hover, .nixe:hover, .release-date:hover, a:hover {
-        transform: translateY(-10px);
-    }
+        h1:hover, .nixe:hover, .release-date:hover, a:hover {
+            transform: translateY(-10px);
+        }
 
-    .track-list li:hover {
-        transform: translateY(-5px);
-    }
+        .track-list li:hover {
+            transform: translateY(-5px);
+        }
 
-    .pixelated {
-        filter: blur(5px);
-        transition: filter 2s ease;
-    }
+        .pixelated {
+            filter: blur(5px);
+            transition: filter 2s ease;
+        }
 
-    .pixelated.remove-pixelate {
-        filter: blur(0);
-    }
+        .pixelated.remove-pixelate {
+            filter: blur(0);
+        }
 
-    .hidden-content {
-        display: none;
-        opacity: 0;
-        transition: opacity 2s ease;
-    }
+        .hidden-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
 
-    .fade-out {
-        opacity: 0;
-        transition: opacity 1s ease;
-    }
+        .fade-out {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
 
-    .background-transition {
-        opacity: 1;
-        transition: opacity 1s ease;
-    }
+        .background-transition {
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
 
-    .IG\ POST {
-        width: 65%;
-        height: auto;
-        margin: 20px auto;
-        transition: all 0.5s ease;
-        text-decoration: underline;
-    }
+        .IG\ POST {
+            width: 65%;
+            height: auto;
+            margin: 20px auto;
+            transition: all 0.5s ease;
+            text-decoration: underline;
+        }
 
-    #play-pause-btn {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        background-color: black;
-        border: none;
-        color: white;
-        font-size: 3rem;
-        padding: 15px 20px;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
-    }
+        #play-pause-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: black;
+            border: none;
+            color: white;
+            font-size: 3rem;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
 
-    #play-pause-btn:hover {
-        transform: scale(1.1);
-    }
-</style>
+        #play-pause-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Pixelate effect for image and text */
+        .pixelated {
+            filter: blur(5px);
+        }
+
+        /* Instagram logo: 65% size */
+        .IG\ POST {
+            width: 65%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="logo">
+        <img id="vampstarz-logo" src="VAMPSTARZ-logo.png" alt="VAMPSTARZ logo">
+    </div>
+
+    <h1>DRAKKAR</h1>
+    <div class="nixe">NIXE!</div>
+    <div class="release-date">FEBRUARY 13TH, 2025</div>
+
+    <ul class="track-list">
+        <li>Track 1</li>
+        <li>Track 2</li>
+        <li>Track 3</li>
+    </ul>
+
+    <a class="IG POST" href="https://www.instagram.com/niasondacosta/" target="_blank">
+        <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/acff46f7ecdd6c3f71b92dd138c1da52253e3d6e/Black-Instagram-Logo-No-Background.png" alt="Instagram logo">
+    </a>
+
+    <button id="play-pause-btn">Play</button>
+
+    <script>
+        window.addEventListener('load', function () {
+            // Pixelation effect
+            setTimeout(function () {
+                document.querySelector('body').classList.add('pixelated');
+                setTimeout(function () {
+                    document.querySelector('body').classList.add('remove-pixelate');
+                }, 2000);
+            }, 0);
+
+            // Small-to-big effect on logo
+            let logo = document.getElementById('vampstarz-logo');
+            logo.classList.add('loaded');
+
+            // Fade out effect on Instagram logo click
+            document.querySelector('.IG\\ POST').addEventListener('click', function () {
+                this.classList.add('fade-out');
+            });
+
+            // Smooth fade-in for text elements
+            setTimeout(function () {
+                document.querySelector('h1').style.opacity = 1;
+                document.querySelector('.nixe').style.opacity = 1;
+                document.querySelector('.release-date').style.opacity = 1;
+                document.querySelector('.track-list').style.opacity = 1;
+            }, 500);
+
+            // Transition for the floating effect (smooth)
+            document.querySelector('h1').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
+            document.querySelector('.nixe').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
+            document.querySelector('.release-date').style.transition = 'transform 0.3s ease-out, opacity 1s ease';
+        });
+    </script>
+
+</body>
+</html>
