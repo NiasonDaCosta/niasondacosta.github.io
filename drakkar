@@ -17,35 +17,56 @@
             color: white;
             font-family: 'Art Dystopia', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
         }
 
         h1 {
             font-size: 5rem;
             letter-spacing: 0.1em;
+            margin: 0;
         }
 
         .content {
             margin-top: 2rem;
         }
 
-        a {
+        .content a {
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .ig-link {
+            margin-top: 1rem;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
     <h1>Drakkar: XII Zenith Cessation</h1>
-    <img src="niasondacosta.github.io/DRAKKAR_album-cover_nixe.png" alt="Drakkar Album Cover">  <div class="content">
-        <a href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1">IG POST.</a> <br>
-        <a href="https://linktr.ee/officialnixe">
-            <img src="drakkar.png" alt="Drakkar Image"> 
+
+    <div class="content">
+        <!-- IG Post Link -->
+        <a class="ig-link" href="https://www.instagram.com/p/DDv7Kbnu2ik/?img_index=1" target="_blank">IG POST.</a>
+        
+        <!-- Drakkar Image with Link -->
+        <a href="https://linktr.ee/officialnixe" target="_blank">
+            <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/5e28169d58d6694013e2d9771637859c1da017e2/drakkar.png?raw=true" alt="Drakkar Image">
         </a>
-        <br>
-        <img src="niasondacosta.github.io/download-vamp.png" alt="Download Vamp">  </div>
+
+        <!-- Download Vamp Image -->
+        <img src="https://github.com/NiasonDaCosta/niasondacosta.github.io/blob/5e28169d58d6694013e2d9771637859c1da017e2/download-vamp.png?raw=true" alt="Download Vamp">
+    </div>
 </body>
 </html>
